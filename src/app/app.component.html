@@ -1,0 +1,27 @@
+<input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)" accept=".csv" />
+<table class="minimalistBlack" *ngIf="records.length > 0">
+  <thead>
+    <tr>
+      <th>Name </th>
+      <th>Email </th>
+      <th>PhoneNumber </th>
+      <th>SourceAccountCurrency </th>
+      <th>RecipientAccountCurrency </th>
+      <th>Amount </th>
+      <th>Schedule </th>
+      <th>Reference </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let record of records;let i = index;">
+      <td> <span>{{record.name}}</span> </td>
+      <td> <span>{{record.email}}</span> </td>
+      <td> <span>{{record.phoneNumber}}</span> </td>
+      <td> <span>{{record.sourceAccountCurrency}}</span> </td>
+      <td> <span>{{record.recipientAccountCurrency}}</span> </td>
+      <td> <span>{{record.amount}}</span> </td>
+      <td> <span>{{record.schedule}}</span> </td>
+      <td> <span>{{record.reference}}</span> </td>
+    </tr>
+  </tbody>
+</table>
